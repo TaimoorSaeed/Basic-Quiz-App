@@ -10,15 +10,35 @@ import UIKit
 
 class ViewController: UIViewController {
  
-    @IBOutlet var questionLable: UILabel!
+    @IBOutlet var questionLabel: UILabel!
     
     @IBOutlet var answerLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        questionLabel.text = questions[currentQuesionIndex]
+    }
+    
+    
+    let questions : [String] = ["What is 7+7?","What is the capital of Pakistan?","What is water made of?"]
+    
+    let answers : [String] = ["14","Islamabad","Hydrogen & Oxygen"]
+    
+    var currentQuesionIndex: Int = 0
 
     @IBAction func showNextQuestion(_ sender: UIButton){
+        currentQuesionIndex += 1
+        if currentQuesionIndex == questions.count {
+            currentQuesionIndex = 0
+        }
         
+        let question : String = questions[currentQuesionIndex]
+        questionLabel.text = question
+        answerLabel.text = "???"
     }
 
     @IBAction func showAnwer(_ sender:UIButton){
-        
+        let answer : String = answers[currentQuesionIndex]
+        answerLabel.text = answer
     }
 }
