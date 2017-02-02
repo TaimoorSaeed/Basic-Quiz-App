@@ -9,17 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+ 
+    @IBOutlet var questionLable: UILabel!
+    
+    @IBOutlet var answerLabel: UILabel!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBAction func showNextQuestion(_ sender: UIButton){
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func showAnwer(_ sender:UIButton){
+        
     }
-
-
 }
-
