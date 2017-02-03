@@ -14,20 +14,21 @@ class ViewController: UIViewController {
     
     @IBOutlet var answerLabel: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        questionLabel.text = questions[currentQuesionIndex]
-    }
-    
-    
     let questions : [String] = ["What is 7+7?","What is the capital of Pakistan?","What is water made of?"]
     
     let answers : [String] = ["14","Islamabad","Hydrogen & Oxygen"]
     
     var currentQuesionIndex: Int = 0
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        questionLabel.text = questions[currentQuesionIndex]
+       
 
+    }
+    
     @IBAction func showNextQuestion(_ sender: UIButton){
         currentQuesionIndex += 1
+        NSLog(String(currentQuesionIndex))
         if currentQuesionIndex == questions.count {
             currentQuesionIndex = 0
         }
