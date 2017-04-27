@@ -22,13 +22,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         questionLabel.text = questions[currentQuesionIndex]
-       
+        answerLabel.text = ""
 
     }
     
     @IBAction func showNextQuestion(_ sender: UIButton){
         currentQuesionIndex += 1
-        NSLog(String(currentQuesionIndex))
+//        NSLog(String(currentQuesionIndex))
         if currentQuesionIndex == questions.count {
             currentQuesionIndex = 0
         }
